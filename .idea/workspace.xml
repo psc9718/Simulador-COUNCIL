@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="83904e7a-2b3d-46e4-844a-b2eb4ec02f2e" name="Default Changelist" comment="" />
+    <list default="true" id="83904e7a-2b3d-46e4-844a-b2eb4ec02f2e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Investigacion_Desarrollo.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Plaza.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Promocion.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data.py" beforeDir="false" afterPath="$PROJECT_DIR$/data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,7 +27,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/Simulador-COUNCIL" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1hpd0wZxfyesUAIK9zxEIZfD7lu" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -43,6 +52,9 @@
       <option name="presentableId" value="Default" />
       <updated>1600711747771</updated>
       <workItem from="1600711757155" duration="6955000" />
+      <workItem from="1600719081139" duration="14000" />
+      <workItem from="1600719145745" duration="47000" />
+      <workItem from="1600783169007" duration="13974000" />
     </task>
     <servers />
   </component>
@@ -54,9 +66,24 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="120" key="FileChooserDialogImpl/0.0.1366.728/1366.0.1280.984@0.0.1366.728" timestamp="1600711800464" />
+    <state x="1702" y="336" key="com.intellij.ide.util.TipDialog" timestamp="1600783169200">
+      <screen x="1366" y="0" width="1280" height="984" />
+    </state>
+    <state x="1702" y="336" key="com.intellij.ide.util.TipDialog/0.0.1366.728/1366.0.1280.984@1366.0.1280.984" timestamp="1600783169200" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1600712616855">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728/1366.0.1280.984@0.0.1366.728" timestamp="1600712616855" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Investigacion_Desarrollo.py</url>
+          <line>38</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
