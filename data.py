@@ -3,12 +3,8 @@
 
 Empresas = 6
 Productos_maximos = 8
-total = 6*8
-
-
+total_productos = 6*8
 
 # -- ---------------------------------------------------------------------------------------------------- #
 
-from sklearn.metrics import jaccard_similarity_score
-print(jaccard_similarity_score([1, 2], [4, 5]))
-0.43
+tamano_del_mercado = 100000

@@ -1,3 +1,5 @@
+# -- ---------------------------------------------------------------------------------------------------- #
+# Funcion que calcula el indice de similtud de jaccard entre dos listas
 
 
 def jaccard(list1, list2):

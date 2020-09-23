@@ -32,11 +32,10 @@ df_promocion[promocion[3]] = Radio
 df_promocion[promocion[4]] = impresos
 
 # -- ---------------------------------------------------------------------------------------------------- #
-# Generar aleatorios de promociones
+# Generar aleatorios de promociones aleatorias por cada empresa y sus respectivos productos
 pesos_promocion = []
 pesos_promocion_porempresa = []
 valor = 0
-a = 0
 
 for j in range(0, dt.Empresas):
     for i in range(0, dt.Productos_maximos):
