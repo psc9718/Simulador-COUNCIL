@@ -1,6 +1,7 @@
 import pandas as pd
 import data as dt
 import numpy as np
+import functions as ft
 
 # -- ---------------------------------------------------------------------------------------------------- #
 # Definir Variables
@@ -56,11 +57,32 @@ productos_porempresas = []
 
 for j in range(0, dt.Empresas):
     for i in range(0, dt.Productos_maximos):
-        productos_porempresas.append(({float(np.random.choice(np.arange(5.1, 6.9, .01), size=1)),
-                                       float(np.random.randint(7, 13, 1)),
-                                       float(np.random.choice(np.arange(3000, 4000, 100), size=1)),
-                                       float(np.random.randint(5, 7, 1)), float(np.random.randint(7000, 9000, 1))}))
+        Pantalla = float(np.random.choice(np.arange(5.1, 6.9, .01), size=1))
+        Camara = float(np.random.randint(7, 13, 1))
+        Bateria = float(np.random.choice(np.arange(3000, 4000, 100), size=1))
+        Procesador = float(np.random.randint(5, 7, 1))
+        Precio = float(np.random.randint(7000, 9000, 1))
+        lista1 = [Pantalla, Camara, Bateria, Procesador, Precio]
+        productos_porempresas.append(lista1)
     caracteristicas_productos_porempresa.append(productos_porempresas)
     productos_porempresas = []
 
 # -- ---------------------------------------------------------------------------------------------------- #
+# Realizar el indice de similitud entre los datos del usuario y los ideales
+
+ideales = df_caracteristicas.iloc[0]
+indice_caracteristicas = []
+indice_productos = []
+indice_productos_porempresa = []
+
+
+for j in range(0, dt.Empresas):
+    for i in range(0, dt.Productos_maximos):
+        for k in range(0, len(ideales)):
+            print(k)
+            indice = ft.jaccard(ideales[k], caracteristicas_productos_porempresa[j][i][k])
+            indice_caracteristicas.append(indice)
+        indice_productos.append(indice_caracteristicas)
+        indice_caracteristicas
+    indice_productos_porempresa.append(indice_productos)
+    indice_productos = []

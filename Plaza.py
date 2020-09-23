@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import data as dt
+import functions as ft
 
 # -- ---------------------------------------------------------------------------------------------------- #
 # Definir Variables
@@ -29,22 +30,29 @@ df_Plaza[Plaza[2]] = e_commerce
 # Generar aleatorios de plazas por cada empresa y sus respectivos productos
 plaza_pesos = []
 pesos_plaza_porempresa = []
+auxiliar = []
 valor = 0
 
 for j in range(0, dt.Empresas):
     for i in range(0, dt.Productos_maximos):
-        retail = float(np.random.choice(np.arange(0, 1, .01), size=1))
-        valor = 1-retail
-        if valor == 0:
-            lista1 = [retail, 0, 0]
-            break
-        telefonica = float(np.random.choice(np.arange(0, valor, .01), size=1))
-        valor = 1-telefonica-retail
-        if valor == 0:
-            lista1 = [retail, telefonica, 0]
-            break
-        commerce = float(np.random.choice(np.arange(0, valor, .01), size=1))
-        lista1 = [retail, telefonica, commerce]
-        plaza_pesos.append(lista1)
+        lista1 = np.random.dirichlet(np.ones(3), size=1)
+        for a in range(0, 3):
+            auxiliar.append(lista1[0][a])
+        plaza_pesos.append(auxiliar)
+        auxiliar = []
     pesos_plaza_porempresa.append(plaza_pesos)
     plaza_pesos = []
+
+# -- ---------------------------------------------------------------------------------------------------- #
+# Realizar el indice de similitud entre los datos del usuario y los ideales
+
+ideales = df_Plaza.iloc[0]
+indice_plaza = []
+indice_plaza_porempresa = []
+
+for j in range(0, dt.Empresas):
+    for i in range(0, dt.Productos_maximos):
+        indice = ft.jaccard(ideales, pesos_plaza_porempresa[j][i])
+        indice_plaza.append(indice)
+    indice_plaza_porempresa.append(indice_plaza)
+    indice_plaza = []

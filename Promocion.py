@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import data as dt
+import functions as ft
 
 # -- ---------------------------------------------------------------------------------------------------- #
 # Definir Variables
@@ -35,32 +36,29 @@ df_promocion[promocion[4]] = impresos
 # Generar aleatorios de promociones aleatorias por cada empresa y sus respectivos productos
 pesos_promocion = []
 pesos_promocion_porempresa = []
+auxiliar = []
 valor = 0
 
 for j in range(0, dt.Empresas):
     for i in range(0, dt.Productos_maximos):
-        redes_sociales = float(np.random.choice(np.arange(0, 1, .01), size=1))
-        valor = 1-redes_sociales
-        if valor == 0:
-            lista1 = [redes_sociales, 0, 0, 0, 0]
-            break
-        television = float(np.random.choice(np.arange(0, valor, .01), size=1))
-        valor = 1-television-redes_sociales
-        if valor == 0:
-            lista1 = [redes_sociales, television, 0, 0, 0]
-            break
-        mkt_directo = float(np.random.choice(np.arange(0, valor, .01), size=1))
-        valor = 1-television-redes_sociales-mkt_directo
-        if valor == 0:
-            lista1 = [redes_sociales, television, mkt_directo, 0, 0]
-            break
-        Radio = float(np.random.choice(np.arange(0, valor, .01), size=1))
-        valor = 1 - television - redes_sociales - mkt_directo - Radio
-        if valor == 0:
-            lista1 = [redes_sociales, television, mkt_directo, Radio, 0]
-            break
-        impresos = float(np.random.choice(np.arange(0, valor, .01), size=1))
-        lista1 = [redes_sociales, television, mkt_directo, Radio, impresos]
-        pesos_promocion.append(lista1)
+        lista1 = np.random.dirichlet(np.ones(5), size=1)
+        for a in range(0, 3):
+            auxiliar.append(lista1[0][a])
+        pesos_promocion.append(auxiliar)
+        auxiliar = []
     pesos_promocion_porempresa.append(pesos_promocion)
     pesos_promocion = []
+
+# -- ---------------------------------------------------------------------------------------------------- #
+# Realizar el indice de similitud entre los datos del usuario y los ideales
+
+ideales = df_promocion.iloc[0]
+indice_promocion = []
+indice_promocion_porempresa = []
+
+for j in range(0, dt.Empresas):
+    for i in range(0, dt.Productos_maximos):
+        indice = ft.jaccard(ideales, pesos_promocion_porempresa[j][i])
+        indice_promocion.append(indice)
+    indice_promocion_porempresa.append(indice_promocion)
+    indice_promocion = []
