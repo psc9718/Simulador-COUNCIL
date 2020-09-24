@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="83904e7a-2b3d-46e4-844a-b2eb4ec02f2e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Investigacion_Desarrollo.py" beforeDir="false" afterPath="$PROJECT_DIR$/Investigacion_Desarrollo.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Plaza.py" beforeDir="false" afterPath="$PROJECT_DIR$/Plaza.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Promocion.py" beforeDir="false" afterPath="$PROJECT_DIR$/Promocion.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -56,7 +54,8 @@
       <workItem from="1600875611776" duration="2082000" />
       <workItem from="1600884058727" duration="501000" />
       <workItem from="1600884788564" duration="1906000" />
-      <workItem from="1600887970913" duration="2423000" />
+      <workItem from="1600887970913" duration="2600000" />
+      <workItem from="1600962180942" duration="2779000" />
     </task>
     <servers />
   </component>
@@ -72,10 +71,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="184" y="7" key="SettingsEditor/0.0.1366.728/1366.0.1280.984@0.0.1366.728" timestamp="1600884877260" />
-    <state x="359" y="249" key="com.intellij.ide.util.TipDialog" timestamp="1600887970956">
+    <state x="359" y="249" key="com.intellij.ide.util.TipDialog" timestamp="1600962181904">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="359" y="249" key="com.intellij.ide.util.TipDialog/0.0.1366.728/1366.0.1280.984@0.0.1366.728" timestamp="1600887970956" />
+    <state x="359" y="249" key="com.intellij.ide.util.TipDialog/0.0.1366.728/1366.0.1280.984@0.0.1366.728" timestamp="1600962181904" />
     <state x="1702" y="336" key="com.intellij.ide.util.TipDialog/0.0.1366.728/1366.0.1280.984@1366.0.1280.984" timestamp="1600875618284" />
     <state x="1681" y="52" width="1296" height="685" key="dock-window-1" timestamp="1600876823572">
       <screen x="1366" y="0" width="1280" height="984" />
