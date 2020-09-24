@@ -9,5 +9,9 @@ def jaccard(list1, list2):
     return float(intersection) / union
 
 
-def euclidean_distance(x, y):
+def euclidean_distance_conjuntos(x, y):
     return np.sqrt(sum(pow(a-b, 2) for a, b in zip(x, y)))
+
+
+def euclidean_distance_elementos(x, y):
+    return np.sqrt(pow(x-y, 2))

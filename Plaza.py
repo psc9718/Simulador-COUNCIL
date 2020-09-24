@@ -52,7 +52,7 @@ indice_plaza_porempresa = []
 
 for j in range(0, dt.Empresas):
     for i in range(0, dt.Productos_maximos):
-        indice = ft.jaccard(ideales, pesos_plaza_porempresa[j][i])
+        indice = ft.euclidean_distance_conjuntos(ideales, pesos_plaza_porempresa[j][i])
         indice_plaza.append(indice)
     indice_plaza_porempresa.append(indice_plaza)
     indice_plaza = []
