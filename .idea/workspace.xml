@@ -2,7 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="83904e7a-2b3d-46e4-844a-b2eb4ec02f2e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/Modelo Council.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Modelo Council.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+      <change beforePath="$PROJECT_DIR$/Plaza.py" beforeDir="false" afterPath="$PROJECT_DIR$/Plaza.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions.py" afterDir="false" />
+>>>>>>> 0937ce686bc62a2bfef99e1cb8daadfb045b5380
+>>>>>>> 1501f4c245fbc587814fe5bfa24c2ee61d61cffa
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +43,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -52,8 +62,18 @@
       <workItem from="1600875611776" duration="2082000" />
       <workItem from="1600884058727" duration="501000" />
       <workItem from="1600884788564" duration="1906000" />
+<<<<<<< HEAD
+      <workItem from="1600887970913" duration="2423000" />
+      <workItem from="1600964321077" duration="658000" />
+      <workItem from="1600965258565" duration="315000" />
+=======
       <workItem from="1600887970913" duration="2600000" />
+<<<<<<< HEAD
       <workItem from="1600962180942" duration="3648000" />
+=======
+      <workItem from="1600962180942" duration="2779000" />
+>>>>>>> 0937ce686bc62a2bfef99e1cb8daadfb045b5380
+>>>>>>> 1501f4c245fbc587814fe5bfa24c2ee61d61cffa
     </task>
     <servers />
   </component>
@@ -65,15 +85,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="120" key="FileChooserDialogImpl/0.0.1366.728/1366.0.1280.984@0.0.1366.728" timestamp="1600711800464" />
-    <state x="184" y="7" key="SettingsEditor" timestamp="1600884877260">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="194" y="9" key="SettingsEditor" timestamp="1600965120073">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="184" y="7" key="SettingsEditor/0.0.1366.728/1366.0.1280.984@0.0.1366.728" timestamp="1600884877260" />
+<<<<<<< HEAD
+    <state x="194" y="9" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1600965120073" />
+    <state x="378" y="308" key="com.intellij.ide.util.TipDialog" timestamp="1600965259077">
+      <screen x="0" y="0" width="1440" height="900" />
+=======
     <state x="359" y="249" key="com.intellij.ide.util.TipDialog" timestamp="1600962181904">
       <screen x="0" y="0" width="1366" height="728" />
+>>>>>>> 0937ce686bc62a2bfef99e1cb8daadfb045b5380
     </state>
     <state x="359" y="249" key="com.intellij.ide.util.TipDialog/0.0.1366.728/1366.0.1280.984@0.0.1366.728" timestamp="1600962181904" />
     <state x="1702" y="336" key="com.intellij.ide.util.TipDialog/0.0.1366.728/1366.0.1280.984@1366.0.1280.984" timestamp="1600875618284" />
+    <state x="378" y="308" key="com.intellij.ide.util.TipDialog/0.0.1440.900@0.0.1440.900" timestamp="1600965259077" />
     <state x="1681" y="52" width="1296" height="685" key="dock-window-1" timestamp="1600876823572">
       <screen x="1366" y="0" width="1280" height="984" />
     </state>
