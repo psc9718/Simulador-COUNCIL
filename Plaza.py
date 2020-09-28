@@ -27,6 +27,18 @@ df_Plaza[Plaza[1]] = telefonica
 df_Plaza[Plaza[2]] = e_commerce
 
 # -- ---------------------------------------------------------------------------------------------------- #
+# Generar aleatorios de inversion por producto
+inversion_por_plaza = []
+inversiones_porempresa = []
+
+for j in range(0, dt.Empresas):
+    for i in range(0, dt.Productos_maximos):
+        lista1 = np.random.choice(np.arange(0, 10000000, 100000), size=1)
+        inversion_por_plaza.append(lista1)
+    inversiones_porempresa.append(inversion_por_plaza)
+    inversion_por_plaza = []
+
+# -- ---------------------------------------------------------------------------------------------------- #
 # Generar aleatorios de plazas por cada empresa y sus respectivos productos
 plaza_pesos = []
 pesos_plaza_porempresa = []
@@ -53,6 +65,6 @@ indice_plaza_porempresa = []
 for j in range(0, dt.Empresas):
     for i in range(0, dt.Productos_maximos):
         indice = ft.euclidean_distance_conjuntos(ideales, pesos_plaza_porempresa[j][i])
-        indice_plaza.append(indice)
+        indice_plaza.append(np.exp(-indice))
     indice_plaza_porempresa.append(indice_plaza)
     indice_plaza = []

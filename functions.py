@@ -14,4 +14,4 @@ def euclidean_distance_conjuntos(x, y):
 
 
 def euclidean_distance_elementos(x, y):
-    return np.sqrt(pow(x-y, 2))
+    return np.exp(-np.sqrt(pow(x-y, 2)))

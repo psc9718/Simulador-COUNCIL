@@ -70,19 +70,14 @@ for j in range(0, dt.Empresas):
 # -- ---------------------------------------------------------------------------------------------------- #
 # Realizar el indice de similitud entre los datos del usuario y los ideales
 
-ideales = df_caracteristicas.iloc[0]
+ideales = df_caracteristicas.iloc[0] #*df_carac_pesos.iloc[0]
 indice_caracteristicas = []
-indice_productos = []
 indice_productos_porempresa = []
-
 
 for j in range(0, dt.Empresas):
     for i in range(0, dt.Productos_maximos):
-        for k in range(0, len(ideales)):
-            print(k)
-            indice = ft.jaccard(ideales[k], caracteristicas_productos_porempresa[j][i][k])
-            indice_caracteristicas.append(indice)
-        indice_productos.append(indice_caracteristicas)
-        indice_caracteristicas
-    indice_productos_porempresa.append(indice_productos)
-    indice_productos = []
+        indice = ft.euclidean_distance_conjuntos(ideales,
+                                                 caracteristicas_productos_porempresa[j][i])#*df_carac_pesos.iloc[0])
+        indice_caracteristicas.append(np.exp(-indice))
+    indice_productos_porempresa.append(indice_caracteristicas)
+    indice_caracteristicas = []

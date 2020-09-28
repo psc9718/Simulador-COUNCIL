@@ -16,6 +16,7 @@ Radio = list()
 Radio.append(.05)
 impresos = list()
 impresos.append(.05)
+inversion_ideal = 6500000
 
 # Columnas
 promocion = ['Redes Sociales', 'Television', 'Bateria', 'Procesador', 'Precio']
@@ -31,6 +32,19 @@ df_promocion[promocion[1]] = Television
 df_promocion[promocion[2]] = mkt_directo
 df_promocion[promocion[3]] = Radio
 df_promocion[promocion[4]] = impresos
+
+# -- ---------------------------------------------------------------------------------------------------- #
+# Generar aleatorios de inversion por producto
+inversion_por_promocion = []
+inversiones_porempresa = []
+
+
+for j in range(0, dt.Empresas):
+    for i in range(0, dt.Productos_maximos):
+        lista1 = np.random.choice(np.arange(0, 10000000, 100000), size=1)
+        inversion_por_promocion.append(lista1)
+    inversiones_porempresa .append(inversion_por_promocion)
+    inversion_por_promocion = []
 
 # -- ---------------------------------------------------------------------------------------------------- #
 # Generar aleatorios de promociones aleatorias por cada empresa y sus respectivos productos
@@ -58,7 +72,7 @@ indice_promocion_porempresa = []
 
 for j in range(0, dt.Empresas):
     for i in range(0, dt.Productos_maximos):
-        indice = ft.jaccard(ideales, pesos_promocion_porempresa[j][i])
-        indice_promocion.append(indice)
+        indice = ft.euclidean_distance_conjuntos(ideales, pesos_promocion_porempresa[j][i])
+        indice_promocion.append(np.exp(-indice))
     indice_promocion_porempresa.append(indice_promocion)
     indice_promocion = []
