@@ -6,35 +6,15 @@ import functions as ft
 # -- ---------------------------------------------------------------------------------------------------- #
 # Importar los datos necesarios
 
-ideales = pl.df_Plaza
+ideales = pl.df_Plaza.iloc[0]
 
 # -- ---------------------------------------------------------------------------------------------------- #
 # Generar aleatorios de plazas por cada empresa y sus respectivos productos
-distribucion_pesos = []
-pesos_distribucion_porempresa = []
-auxiliar = []
-valor = 0
-
-for j in range(0, dt.Empresas):
-    for i in range(0, dt.Productos_maximos):
-        lista1 = np.random.dirichlet(np.ones(3), size=1)
-        for a in range(0, 3):
-            auxiliar.append(lista1[0][a])
-        distribucion_pesos.append(auxiliar)
-        auxiliar = []
-    pesos_distribucion_porempresa.append(distribucion_pesos)
-    plaza_pesos = []
+pesos_distribucion_porempresa = ft.get_aleatorios(dt.Empresas, dt.Productos_maximos, 3)
 
 # -- ---------------------------------------------------------------------------------------------------- #
 # Realizar el indice de similitud entre los datos del usuario y los ideales
 
-ideales = ideales.iloc[0]
-indice_distribucion = []
-indice_distribucion_porempresa = []
-
-for j in range(0, dt.Empresas):
-    for i in range(0, dt.Productos_maximos):
-        indice = ft.euclidean_distance_conjuntos(ideales, pesos_distribucion_porempresa[j][i])
-        indice_distribucion.append(np.exp(-indice))
-    indice_distribucion_porempresa.append(indice_distribucion)
-    indice_plaza = []
+pesos = [np.ones(3)]
+similitud_distribucion = ft.get_similitud(dt.Empresas, dt.Productos_maximos, ideales, pesos_distribucion_porempresa,
+                                          pesos)
