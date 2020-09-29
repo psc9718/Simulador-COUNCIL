@@ -1,4 +1,6 @@
 import numpy as np
+from scipy.spatial import distance
+
 # -- ---------------------------------------------------------------------------------------------------- #
 # Funciones para indices de similitud
 
@@ -29,7 +31,7 @@ def get_aleatorios(empresas, productos, cantidad):
     for j in range(0, empresas):
         for i in range(0, productos):
             lista1 = np.random.dirichlet(np.ones(cantidad), size=1)
-            for a in range(0, 3):
+            for a in range(0, cantidad):
                 auxiliar.append(lista1[0][a])
             aleatorios_individuales.append(auxiliar)
             auxiliar = []
@@ -64,7 +66,7 @@ def get_similitud(empresas, productos, ideales, lista_comparar, pesos):
     indice_porempresas = []
     for j in range(0, empresas):
         for i in range(0, productos):
-            indice = euclidean_distance_conjuntos(ideales, lista_comparar[j][i])
+            indice = distance.euclidean(ideales, lista_comparar[j][i])
             indice_individual.append(np.exp(-indice))
         indice_porempresas.append(indice_individual)
         indice_individual = []
