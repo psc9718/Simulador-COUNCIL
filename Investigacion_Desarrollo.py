@@ -8,7 +8,7 @@ import functions as ft
 
 # Investigacion y Desarrollo
 Precio = list()
-Precio.append(7999)
+Precio.append(79)  # Darle una escala mas pequeña
 p_precio = list()
 p_precio.append(.5)
 Pantalla = list()
@@ -20,7 +20,7 @@ Camara.append(10)
 p_camara = list()
 p_camara.append(.15)
 Bateria = list()
-Bateria.append(3500)
+Bateria.append(35)
 p_bateria = list()
 p_bateria.append(.05)
 Procesador = list()
@@ -59,9 +59,9 @@ for j in range(0, dt.Empresas):
     for i in range(0, dt.Productos_maximos):
         Pantalla = float(np.random.choice(np.arange(5.1, 6.9, .01), size=1))
         Camara = float(np.random.randint(7, 13, 1))
-        Bateria = float(np.random.choice(np.arange(3000, 4000, 100), size=1))
-        Procesador = float(np.random.randint(5, 7, 1))
-        Precio = float(np.random.randint(7000, 9000, 1))
+        Bateria = float(np.random.choice(np.arange(30, 40, 1), size=1))
+        Procesador = float(np.random.choice(np.arange(5, 7, .1), size=1))
+        Precio = float(np.random.choice(np.arange(70, 90, 1.1), size=1))
         lista1 = [Pantalla, Camara, Bateria, Procesador, Precio]
         productos_porempresas.append(lista1)
     caracteristicas_productos_porempresa.append(productos_porempresas)
@@ -70,6 +70,7 @@ for j in range(0, dt.Empresas):
 # -- ---------------------------------------------------------------------------------------------------- #
 # Realizar el indice de similitud entre los datos del usuario y los ideales
 
-pesos = df_carac_pesos.iloc[0]
+caracteristicas_productos_porempresa = ft.get_pesos(5, dt.Empresas, dt.Productos_maximos,
+                                                    caracteristicas_productos_porempresa, df_carac_pesos.iloc[0])
 similitud_productos = ft.get_similitud(dt.Empresas, dt.Productos_maximos, df_caracteristicas.iloc[0],
-                                       caracteristicas_productos_porempresa, pesos)
+                                       caracteristicas_productos_porempresa)

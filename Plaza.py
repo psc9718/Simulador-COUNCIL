@@ -35,5 +35,5 @@ pesos_plaza_porempresa = ft.get_aleatorios(dt.Empresas, dt.Productos_maximos, 3)
 
 # -- ---------------------------------------------------------------------------------------------------- #
 # Realizar el indice de similitud entre los datos del usuario y los ideales
-pesos = [np.ones(3)]
-similitud_plaza = ft.get_similitud(dt.Empresas, dt.Productos_maximos, df_Plaza.iloc[0], pesos_plaza_porempresa, pesos)
+
+similitud_plaza = ft.get_similitud(dt.Empresas, dt.Productos_maximos, df_Plaza.iloc[0], pesos_plaza_porempresa)

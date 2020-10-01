@@ -15,6 +15,6 @@ pesos_distribucion_porempresa = ft.get_aleatorios(dt.Empresas, dt.Productos_maxi
 # -- ---------------------------------------------------------------------------------------------------- #
 # Realizar el indice de similitud entre los datos del usuario y los ideales
 
-pesos = [np.ones(3)]
+pesos_distribucion_porempresa = ft.get_pesos(5, dt.Empresas, dt.total_productos, pesos_distribucion_porempresa)
 similitud_distribucion = ft.get_similitud(dt.Empresas, dt.Productos_maximos, ideales, pesos_distribucion_porempresa,
                                           pesos)

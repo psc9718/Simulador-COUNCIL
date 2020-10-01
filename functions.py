@@ -61,7 +61,18 @@ def get_inversiones(empresas, productos):
 # Funcion que realiza el indice de similitud para las listas de este proyecto
 
 
-def get_similitud(empresas, productos, ideales, lista_comparar, pesos):
+def get_pesos(cantidad, empresas, productos, variables, pesos):
+    for j in range(0, empresas):
+        for k in range(0, productos):
+            for i in range(0, cantidad):
+                variables[j][k][i] = variables[j][k][i]*pesos[i]
+    return variables
+
+# -- ---------------------------------------------------------------------------------------------------- #
+# Funcion que realiza el indice de similitud para las listas de este proyecto
+
+
+def get_similitud(empresas, productos, ideales, lista_comparar):
     indice_individual = []
     indice_porempresas = []
     for j in range(0, empresas):

@@ -5,7 +5,7 @@ import functions as ft
 
 # -- ---------------------------------------------------------------------------------------------------- #
 # Definir Variables
-# Promocion
+# Promocions
 Redes_sociales = list()
 Redes_sociales.append(.5)
 Television = list()
@@ -44,6 +44,5 @@ pesos_promocion_porempresa = ft.get_aleatorios(dt.Empresas, dt.Productos_maximos
 # -- ---------------------------------------------------------------------------------------------------- #
 # Realizar el indice de similitud entre los datos del usuario y los ideales
 
-pesos = [np.ones(5)]
 similitud_promocion = ft.get_similitud(dt.Empresas, dt.Productos_maximos, df_promocion.iloc[0],
-                                       pesos_promocion_porempresa, pesos)
+                                       pesos_promocion_porempresa)
