@@ -8,7 +8,7 @@ import functions as ft
 
 # Investigacion y Desarrollo
 Precio = list()
-Precio.append(79)  # Darle una escala mas pequeña
+Precio.append(79)  # Darle una escala mas pequeña, valor 7999
 p_precio = list()
 p_precio.append(.5)
 Pantalla = list()
@@ -20,7 +20,7 @@ Camara.append(10)
 p_camara = list()
 p_camara.append(.15)
 Bateria = list()
-Bateria.append(35)
+Bateria.append(35) # Escala más pequeña, valor 3500
 p_bateria = list()
 p_bateria.append(.05)
 Procesador = list()
@@ -67,10 +67,12 @@ for j in range(0, dt.Empresas):
     caracteristicas_productos_porempresa.append(productos_porempresas)
     productos_porempresas = []
 
+caracteristicas_productos_porempresa_sp = caracteristicas_productos_porempresa.copy()
 # -- ---------------------------------------------------------------------------------------------------- #
 # Realizar el indice de similitud entre los datos del usuario y los ideales
 
 caracteristicas_productos_porempresa = ft.get_pesos(5, dt.Empresas, dt.Productos_maximos,
                                                     caracteristicas_productos_porempresa, df_carac_pesos.iloc[0])
-similitud_productos = ft.get_similitud(dt.Empresas, dt.Productos_maximos, df_caracteristicas.iloc[0],
+similitud_productos = ft.get_similitud(dt.Empresas, dt.Productos_maximos,
+                                       df_carac_pesos.iloc[0]*df_caracteristicas.iloc[0],
                                        caracteristicas_productos_porempresa)
