@@ -4,7 +4,7 @@ import data as dt
 import functions as ft
 
 # -- ---------------------------------------------------------------------------------------------------- #
-# Definir Variables
+# Definir Variables ideales y pesos
 # Promocions
 Redes_sociales = list()
 Redes_sociales.append(.5)

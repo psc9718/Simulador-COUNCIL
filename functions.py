@@ -1,5 +1,6 @@
 import numpy as np
 from scipy.spatial import distance
+import scipy.spatial.distance as spsd
 
 # -- ---------------------------------------------------------------------------------------------------- #
 # Funciones para indices de similitud
@@ -50,7 +51,7 @@ def get_inversiones(empresas, productos):
 
     for j in range(0, empresas):
         for i in range(0, productos):
-            lista1 = np.random.choice(np.arange(0, 10000000, 100000), size=1)
+            lista1 = np.random.choice(np.arange(0, 100, 1), size=1)
             inversion_individual.append(lista1)
         inversiones_porempresa.append(inversion_individual)
         inversion_individual = []

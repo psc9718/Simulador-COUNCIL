@@ -4,7 +4,7 @@ import numpy as np
 import functions as ft
 
 # -- ---------------------------------------------------------------------------------------------------- #
-# Definir Variables
+# Definir Variables ideales y pesos
 
 # Investigacion y Desarrollo
 Precio = list()
@@ -12,7 +12,7 @@ Precio.append(79)  # Darle una escala mas pequeña, valor 7999
 p_precio = list()
 p_precio.append(.5)
 Pantalla = list()
-Pantalla.append(6.0)
+Pantalla.append(60)
 p_pantalla = list()
 p_pantalla.append(.25)
 Camara = list()
@@ -20,11 +20,11 @@ Camara.append(10)
 p_camara = list()
 p_camara.append(.15)
 Bateria = list()
-Bateria.append(35) # Escala más pequeña, valor 3500
+Bateria.append(35)  # Escala más pequeña, valor 3500
 p_bateria = list()
 p_bateria.append(.05)
 Procesador = list()
-Procesador.append(6.0)
+Procesador.append(60)
 p_procesador = list()
 p_procesador.append(.05)
 
@@ -57,17 +57,17 @@ productos_porempresas = []
 
 for j in range(0, dt.Empresas):
     for i in range(0, dt.Productos_maximos):
-        Pantalla = float(np.random.choice(np.arange(5.1, 6.9, .01), size=1))
-        Camara = float(np.random.randint(7, 13, 1))
-        Bateria = float(np.random.choice(np.arange(30, 40, 1), size=1))
-        Procesador = float(np.random.choice(np.arange(5, 7, .1), size=1))
-        Precio = float(np.random.choice(np.arange(70, 90, 1.1), size=1))
+        Pantalla = float(np.random.choice(np.arange(0, 100, 1), size=1))
+        Camara = float(np.random.randint(0, 100, 1))
+        Bateria = float(np.random.choice(np.arange(0, 100, 1), size=1))
+        Procesador = float(np.random.choice(np.arange(0, 100, .1), size=1))
+        Precio = float(np.random.choice(np.arange(0, 100, 1), size=1))
         lista1 = [Pantalla, Camara, Bateria, Procesador, Precio]
         productos_porempresas.append(lista1)
     caracteristicas_productos_porempresa.append(productos_porempresas)
     productos_porempresas = []
 
-caracteristicas_productos_porempresa_sp = caracteristicas_productos_porempresa.copy()
+# caracteristicas_productos_porempresa_sp = caracteristicas_productos_porempresa.copy()
 # -- ---------------------------------------------------------------------------------------------------- #
 # Realizar el indice de similitud entre los datos del usuario y los ideales
 
