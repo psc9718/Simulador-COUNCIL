@@ -52,3 +52,19 @@ for i in range(0, dt.Empresas):
         auxiliar.append(indice)
     similitud_inversion.append(auxiliar)
     auxiliar = []
+
+# -- ---------------------------------------------------------------------------------------------------- #
+# Similitud total de promocion
+
+peso_inversion = .5
+peso_pesos = .5
+auxiliar = []
+similitud_plaza_total = []
+
+for i in range(0, dt.Empresas):
+    for j in range(0, dt.Productos_maximos):
+        indice = similitud_inversion[i][j]*peso_inversion+peso_pesos*similitud_plaza[i][j]
+        auxiliar.append(indice)
+    similitud_plaza_total.append(auxiliar)
+    auxiliar = []
+
