@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import data as dt
 import functions as ft
+import Distribucion as dr
 import scipy.spatial.distance as spsd
 
 # -- ---------------------------------------------------------------------------------------------------- #
@@ -68,3 +69,17 @@ for i in range(0, dt.Empresas):
     similitud_plaza_total.append(auxiliar)
     auxiliar = []
 
+# -- ---------------------------------------------------------------------------------------------------- #
+# Posicionamiento
+
+posicionamiento = []
+auxiliar = []
+peso_dr = .5
+peso_pl = .5
+
+for i in range(0, dt.Empresas):
+    for j in range(0, dt.Productos_maximos):
+        indice = dr.similitud_distribucion[i][j] * peso_dr + peso_pl * similitud_plaza_total[i][j]
+        auxiliar.append(indice)
+    posicionamiento.append(auxiliar)
+    auxiliar = []

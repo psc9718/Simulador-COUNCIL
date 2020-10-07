@@ -76,3 +76,9 @@ for i in range(0, dt.Empresas):
         auxiliar.append(indice)
     similitud_promocion_total.append(auxiliar)
     auxiliar = []
+
+# -- ---------------------------------------------------------------------------------------------------- #
+# Accesibilidad de cada uno de los productos
+
+Accesibilidad = similitud_promocion
+
