@@ -1,22 +1,24 @@
 import numpy as np
 from scipy.spatial import distance
-import scipy.spatial.distance as spsd
 
 # -- ---------------------------------------------------------------------------------------------------- #
 # Funciones para indices de similitud
 
 
 def jaccard(list1, list2):
+    # Funcion que calcula la similitud de jaccard, recordar que la restriccion es que es para numeros binarios
     intersection = len(list(set(list1).intersection(list2)))
     union = (len(list1) + len(list2)) - intersection
     return float(intersection) / union
 
 
 def euclidean_distance_conjuntos(x, y):
+    # Calcula similitud euclidiana entre dos listas
     return np.sqrt(sum(pow(a-b, 2) for a, b in zip(x, y)))
 
 
 def euclidean_distance_elementos(x, y):
+    # Calcula similitud euclidiana entre dos valores
     return np.exp(-np.sqrt(pow(x-y, 2)))
 
 # -- ---------------------------------------------------------------------------------------------------- #
@@ -24,7 +26,7 @@ def euclidean_distance_elementos(x, y):
 
 
 def get_aleatorios(empresas, productos, cantidad):
-
+    # Funcion que retorna aleatorios entre 0 y 1 para otorgar los porcentajes.
     aleatorios_individuales = []
     aleatorios_empresa = []
     auxiliar = []
@@ -46,6 +48,7 @@ def get_aleatorios(empresas, productos, cantidad):
 
 
 def get_inversiones(empresas, productos):
+    # Funcion que retorna la decision de cada empresa para cada producto de inversion. Escala del 0 al 100.
     inversion_individual = []
     inversiones_porempresa = []
 
@@ -63,6 +66,7 @@ def get_inversiones(empresas, productos):
 
 
 def get_pesos(cantidad, empresas, productos, variables, pesos):
+    # Funcion que calcula los los ideales por su peso.
     for j in range(0, empresas):
         for k in range(0, productos):
             for i in range(0, cantidad):
@@ -74,6 +78,7 @@ def get_pesos(cantidad, empresas, productos, variables, pesos):
 
 
 def get_similitud(empresas, productos, ideales, lista_comparar):
+    # Funcion que calcula la similitud entre dos listas que le mandes, utilizando la librería de scipy.
     indice_individual = []
     indice_porempresas = []
     for j in range(0, empresas):

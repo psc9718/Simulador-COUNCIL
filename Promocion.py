@@ -21,7 +21,7 @@ inversion_ideal = 6500000
 
 # Columnas
 promocion = ['Redes Sociales', 'Television', 'Bateria', 'Procesador', 'Precio']
-
+# Definir lista de las variables ideales
 
 # -- ---------------------------------------------------------------------------------------------------- #
 # Promocion
@@ -36,20 +36,24 @@ df_promocion[promocion[4]] = impresos
 
 # -- ---------------------------------------------------------------------------------------------------- #
 # Generar aleatorios de inversion por producto
+# Generar la decision de las empresas para la inversion para cada producto
 
 inversion_por_promocion = ft.get_inversiones(dt.Empresas, dt.Productos_maximos)
 # -- ---------------------------------------------------------------------------------------------------- #
 # Generar aleatorios de promociones aleatorias por cada empresa y sus respectivos productos
+# Generar la decision de empresas de pesos para cada una de la promocion
 
 pesos_promocion_porempresa = ft.get_aleatorios(dt.Empresas, dt.Productos_maximos, 5)
 # -- ---------------------------------------------------------------------------------------------------- #
 # Realizar el indice de similitud entre los datos del usuario y los ideales
+# Calcular la similitud de pesos decididos por cada empresa contra los ideales del mercado
 
 similitud_promocion = ft.get_similitud(dt.Empresas, dt.Productos_maximos, df_promocion.iloc[0],
                                        pesos_promocion_porempresa)
 
 # -- ---------------------------------------------------------------------------------------------------- #
 # Realizar el indice de similitud entre los datos la inversión ideal
+# Calcular la similitud de la decision de inversiones por empresa contra el ideal
 
 similitud_inversion = []
 auxiliar = []
@@ -64,6 +68,7 @@ for i in range(0, dt.Empresas):
 
 # -- ---------------------------------------------------------------------------------------------------- #
 # Similitud total de promocion
+# Calcular la similitud total de promocion
 
 peso_inversion = .5
 peso_pesos = .5
@@ -79,6 +84,7 @@ for i in range(0, dt.Empresas):
 
 # -- ---------------------------------------------------------------------------------------------------- #
 # Accesibilidad de cada uno de los productos
+# La similitud total de promocion es la accesibilidad del producto
 
 Accesibilidad = similitud_promocion
 

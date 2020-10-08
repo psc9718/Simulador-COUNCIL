@@ -17,6 +17,7 @@ e_commerce.append(.1)
 
 # Columnas
 Plaza = ['Retail', 'Plaza', 'E-commerce']
+# Definir lista de las variables ideales
 
 # -- ---------------------------------------------------------------------------------------------------- #
 # Plaza
@@ -28,20 +29,22 @@ df_Plaza[Plaza[1]] = telefonica
 df_Plaza[Plaza[2]] = e_commerce
 
 # -- ---------------------------------------------------------------------------------------------------- #
-# Generar aleatorios de inversion por producto y por plaza
+# Generar aleatorios de la seleccion de inversion para cada uno de los productos que tienen las empresas
 inversion_por_plaza = ft.get_inversiones(dt.Empresas, dt.Productos_maximos)
 
 # -- ---------------------------------------------------------------------------------------------------- #
 # Generar aleatorios de plazas por cada empresa y sus respectivos productos
+# Generar decisiones que toma cada empresa para los pesos de las plazas.
 pesos_plaza_porempresa = ft.get_aleatorios(dt.Empresas, dt.Productos_maximos, 3)
 
 # -- ---------------------------------------------------------------------------------------------------- #
 # Realizar el indice de similitud entre los datos del usuario y los ideales
-
+# calcular similitud que tiene los pesos de decision de cada empresa con los ideales del mercado.
 similitud_plaza = ft.get_similitud(dt.Empresas, dt.Productos_maximos, df_Plaza.iloc[0], pesos_plaza_porempresa)
 
 # -- ---------------------------------------------------------------------------------------------------- #
 # Realizar el indice de similitud entre los datos la inversión ideal
+# Similitud de los ideales del mercado contra las decisiones de la empresa
 
 similitud_inversion = []
 auxiliar = []
@@ -56,6 +59,7 @@ for i in range(0, dt.Empresas):
 
 # -- ---------------------------------------------------------------------------------------------------- #
 # Similitud total de promocion
+# Calcular un promedio ponderado de las dos similitudes para ver cual es la similitud total.
 
 peso_inversion = .5
 peso_pesos = .5
@@ -71,6 +75,7 @@ for i in range(0, dt.Empresas):
 
 # -- ---------------------------------------------------------------------------------------------------- #
 # Posicionamiento
+# El posicionamiento tiene que ver con las decisiones de distribucion y plaza
 
 posicionamiento = []
 auxiliar = []
