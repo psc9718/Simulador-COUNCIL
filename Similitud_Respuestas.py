@@ -8,6 +8,9 @@ import pandas as pd
 
 # -- ---------------------------------------------------------------------------------------------------- #
 # Calcular similitudes totales por producto
+# Con la finalidad de tener la similitud total de cada producto con el segmento en general
+# Se le da un peso a cada una de las secciones
+# Se obtiene la similitud total del producto contra el segmento
 
 peso_pl = .25
 peso_pr = .25
@@ -26,6 +29,8 @@ for i in range(0, dt.Empresas):
 
 # -- ---------------------------------------------------------------------------------------------------- #
 # Calcular cuánto alcanzó del mercado cada uno de los productos en procentaje
+# Calcular el procentaje que obtuvo cada producto del mercado
+# con respecto a los demás productos del mercado.
 
 suma = np.sum(similitud_xprod_total)
 auxiliar = []
@@ -41,6 +46,8 @@ for i in range(0, dt.Empresas):
 
 # -- ---------------------------------------------------------------------------------------------------- #
 # Calcular cuánto alcanzó del mercado cada uno de los productos en cantidad de productos
+# Calcular cantidad de productos del mercado que vendio cada empresa de cada producto
+# con la cantidad total y los porcentajes calculados anteriormente
 # ¿Cuántos productos se vendieron por cada uno de los productos que había?
 
 auxiliar = []
@@ -55,7 +62,7 @@ for i in range(0, dt.Empresas):
     auxiliar = []
 
 # -- ---------------------------------------------------------------------------------------------------- #
-# Calcular cuánto alcanzó del mercado cada uno de los productos en cantidad de productos
+# Calcular cuantos productos obtuvo cada empresa
 # ¿Cuántos productos se vendieron por cada empresa?
 
 cantidad_porempresa = []
@@ -70,6 +77,7 @@ print('La empresa que más vendió fue la empresa', posicion_empresa+1, 'con un 
 
 # -- ---------------------------------------------------------------------------------------------------- #
 # Calcular máximos de cada empresa y la posición de ese máximo
+# Calcular el producto más vendido, qué producto de la empresa era y que empresa fue.
 
 maximos = []
 posiciones = []

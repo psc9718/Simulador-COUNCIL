@@ -5,6 +5,8 @@ import functions as ft
 
 # -- ---------------------------------------------------------------------------------------------------- #
 # Definir Variables ideales y pesos
+# las variables que tienen la p al principio se refieren al peso de las variables.
+# Se utiliza una escala del 0 al 100.
 
 # Investigacion y Desarrollo
 Precio = list()
@@ -30,6 +32,7 @@ p_procesador.append(.05)
 
 # Columnas
 caracteristicas = ['Pantalla', 'Camara', 'Bateria', 'Procesador', 'Precio']
+# Definir lista de las variables ideales
 
 # -- ---------------------------------------------------------------------------------------------------- #
 # Area Investigacion y Desarrollo
@@ -51,6 +54,7 @@ df_carac_pesos = get_df(p_pantalla, p_camara, p_bateria, p_procesador, p_precio)
 
 # -- ---------------------------------------------------------------------------------------------------- #
 # Generar aleatorios de caracteristicas
+# Generar las caracteristicas que tendrá cada empresa para cada una de los productos
 
 caracteristicas_productos_porempresa = []
 productos_porempresas = []
@@ -67,12 +71,14 @@ for j in range(0, dt.Empresas):
     caracteristicas_productos_porempresa.append(productos_porempresas)
     productos_porempresas = []
 
-# caracteristicas_productos_porempresa_sp = caracteristicas_productos_porempresa.copy()
 # -- ---------------------------------------------------------------------------------------------------- #
 # Realizar el indice de similitud entre los datos del usuario y los ideales
 
+# Calcular cada una de las caracteristicas por el peso que les corresponde
 caracteristicas_productos_porempresa = ft.get_pesos(5, dt.Empresas, dt.Productos_maximos,
                                                     caracteristicas_productos_porempresa, df_carac_pesos.iloc[0])
+# Calcular la similitud que tiene las caracteristicas elegidas por cada empresa para cada uno de sus productos con
+# las caracteristicas ideales del segmento
 similitud_productos = ft.get_similitud(dt.Empresas, dt.Productos_maximos,
                                        df_carac_pesos.iloc[0]*df_caracteristicas.iloc[0],
                                        caracteristicas_productos_porempresa)
